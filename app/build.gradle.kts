@@ -72,6 +72,9 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0-rc02")
 
+    //Extended material icons
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
+
     //Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
