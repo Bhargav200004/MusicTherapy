@@ -1,4 +1,4 @@
-package com.example.musictherapy.ui.homeScreen
+package com.example.musictherapy.ui.screens.homeScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,9 +14,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.NotificationsNone
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -98,7 +100,7 @@ fun TopHomeScreenBar() {
                 }
 
                 Icon(
-                    painter = painterResource(id = R.drawable.bell),
+                    imageVector = Icons.Outlined.NotificationsNone,
                     contentDescription = "Bell icon",
                 )
             }
@@ -150,7 +152,7 @@ fun BottomHomeScreenBar() {
                     }
                     IconButton(onClick = { /*TODO*/ }) {
                         Icon(
-                            painter = painterResource(id = R.drawable.heart),
+                            imageVector = Icons.Outlined.FavoriteBorder,
                             contentDescription = "Heart"
                         )
                     }
