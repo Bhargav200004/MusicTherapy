@@ -8,7 +8,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.musictherapy.navigation.AppNavigation
-import com.example.musictherapy.ui.screens.homeScreen.HomeScreen
 import com.example.musictherapy.ui.theme.MusicTherapyTheme
 
 class MainActivity : ComponentActivity() {
