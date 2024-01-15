@@ -1,7 +1,9 @@
 package com.example.musictherapy.navigation
 
-import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -17,7 +19,6 @@ import com.example.musictherapy.ui.screens.homeScreen.HomeScreen
 import com.example.musictherapy.ui.screens.locationScreen.LocationScreen
 import com.example.musictherapy.ui.screens.musicScreen.MusicScreen
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun AppNavigation() {
 
@@ -49,10 +50,14 @@ fun AppNavigation() {
             )
 
         }
-    ){
-        
-        NavigationController(navController = navController)
-        
+    ){paddingValue->
+        Box(
+            modifier = Modifier
+            .padding(paddingValues = paddingValue)
+            .fillMaxSize()
+        ){
+            NavigationController(navController = navController)
+        }
     }
 
 }
