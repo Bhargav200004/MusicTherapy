@@ -1,5 +1,6 @@
 package com.example.musictherapy.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -27,11 +28,12 @@ fun BottomNavigationScreenBar(
     currentRoute: String?,
     navController: NavHostController
 ) {
-    Box(modifier = Modifier.padding(horizontal = 20.dp),
-        contentAlignment = Alignment.BottomStart
+    Box(
+        modifier = Modifier.padding(horizontal = 20.dp),
     ) {
         Box(
             modifier = Modifier
+                .clip(shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp))
                 .shadow(
                     ambientColor = Color.White,
                     spotColor = Color.White,
@@ -40,10 +42,8 @@ fun BottomNavigationScreenBar(
                         topStart = 40.dp,
                         topEnd = 40.dp
                     )
-                )
-                .clip(shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp)),
-
-            ) {
+                ),
+        ) {
             BottomAppBar(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -82,7 +82,12 @@ fun BottomNavigationScreenBar(
 }
 
 @Composable
-private fun IconButton(onClick : () -> Unit, icon : ImageVector, isIconSelected : Boolean, contentDescription : String) {
+private fun IconButton(
+    onClick: () -> Unit,
+    icon: ImageVector,
+    isIconSelected: Boolean,
+    contentDescription: String
+) {
     androidx.compose.material3.IconButton(onClick = onClick) {
         Icon(
             imageVector = icon,

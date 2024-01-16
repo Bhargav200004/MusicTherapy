@@ -31,7 +31,7 @@ fun LazyListScope.recentlyPlayed(){
         Text(text = "Recently played" , style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold))
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(){
-            items(10){
+            items(5){
                 RecentlyPlayedCard()
             }
         }
@@ -42,12 +42,12 @@ fun LazyListScope.recentlyPlayed(){
 fun RecentlyPlayedCard() {
     Column(
         modifier = Modifier
-            .padding(end =  16.dp),
+            .padding(end = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
             modifier = Modifier,
-            ){
+        ) {
             Image(
                 modifier = Modifier
                     .width(135.dp)
@@ -63,6 +63,6 @@ fun RecentlyPlayedCard() {
             text = "The Triangle",
             style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.W400),
         )
-        
+
     }
 }
