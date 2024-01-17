@@ -1,72 +1,77 @@
 package com.example.musictherapy.ui.screens.musicScreen
 
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.outlined.Favorite
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.example.musictherapy.R
+import com.example.musictherapy.ui.components.musicScreenComponent.MusicScreenFunctionButton
+import com.example.musictherapy.ui.components.musicScreenComponent.MusicScreenProgressIndicator
+import com.example.musictherapy.ui.components.musicScreenComponent.MusicScreenTitleImage
+import com.example.musictherapy.ui.components.musicScreenComponent.MusicScreenTopBar
 
 @Composable
 fun MusicScreen() {
     Scaffold(
-        topBar = { MusicScreenTopBar(
-            title = "Ophelia by Steven",
-            isLikeButtonSelected = false,
-            onBackButtonClick = {},
-            onLikeButtonClick = {}
-        ) }
+        modifier = Modifier
+            .padding(horizontal = 20.dp),
+        topBar = {
+            MusicScreenTopBar(
+                title = "Ophelia by Steven",
+                isLikeButtonSelected = false,
+                onBackButtonClick = {},
+                onLikeButtonClick = {}
+            )
+        }
     ) { paddingValues ->
-        Surface(
+        Column(
             modifier = Modifier
-                .padding(paddingValues = paddingValues)
+                .padding(paddingValues = paddingValues),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-        }
+            Spacer(modifier = Modifier.height(13.dp))
 
-    }
-}
+            MusicScreenTitleImage(titleImage = R.drawable.demo)
+            Spacer(modifier = Modifier.height(18.dp))
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun MusicScreenTopBar(title: String, onBackButtonClick: () -> Unit, onLikeButtonClick: () -> Unit , isLikeButtonSelected : Boolean = false) {
-    CenterAlignedTopAppBar(
-        modifier = Modifier
-            .fillMaxWidth(),
-        navigationIcon = {
-            IconButton(onClick = onBackButtonClick) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "backButton Icon"
-                )
-            }
-        },
-        title = {
             Text(
-                text = title
+                text = "Ophelia",
+                style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
             )
-        },
-        actions = {
-            IconButton(onClick = onLikeButtonClick) {
-                Icon(
-                    imageVector = if (isLikeButtonSelected) {
-                        Icons.Default.Favorite
-                    } else {
-                        Icons.Outlined.FavoriteBorder
-                    },
-                    contentDescription = "Favourite Icon"
-                )
-            }
+
+            Spacer(modifier = Modifier.height(5.dp))
+            Text(
+                text = "Steven Price",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.W500)
+            )
+
+            Spacer(modifier = Modifier.height(41.dp))
+            MusicScreenProgressIndicator(
+                progress = 0.6f,
+                initialTime = "0:00",
+                finalTime = "3:15"
+            )
+
+            Spacer(modifier = Modifier.height(41.dp))
+
+            MusicScreenFunctionButton(
+                onClickShuffleButton = { /*TODO*/ },
+                onClickSkipPreviousButton = { /*TODO*/ },
+                onClickPauseButton = { /*TODO*/ },
+                onClickSkipNextButton = { /*TODO*/ },
+                onClickRepeatButton = {/*TODO*/ }
+            )
         }
-    )
+    }
 }
