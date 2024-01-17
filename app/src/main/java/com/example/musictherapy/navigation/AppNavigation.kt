@@ -30,8 +30,8 @@ fun AppNavigation() {
     
     val item = listOf(
         NavigationItem.Home,
-        NavigationItem.Favorite,
         NavigationItem.Music,
+        NavigationItem.Favorite,
         NavigationItem.Location
     )
 
@@ -67,7 +67,7 @@ fun AppNavigation() {
 
 @Composable
 fun NavigationController(navController : NavHostController) {
-    NavHost(navController = navController, startDestination = NavigationItem.Home.route){
+    NavHost(navController = navController, startDestination = NavigationItem.Music.route){
         composable(route = NavigationItem.Home.route){
             HomeScreen()
         }
