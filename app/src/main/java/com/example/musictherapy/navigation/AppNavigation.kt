@@ -67,7 +67,7 @@ fun AppNavigation() {
 
 @Composable
 fun NavigationController(navController : NavHostController) {
-    NavHost(navController = navController, startDestination = NavigationItem.Music.route){
+    NavHost(navController = navController, startDestination = NavigationItem.Favorite.route){
         composable(route = NavigationItem.Home.route){
             HomeScreen()
         }
