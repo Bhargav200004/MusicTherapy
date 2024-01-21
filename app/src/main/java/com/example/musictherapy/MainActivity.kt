@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.musictherapy.navigation.AppNavigation
 import com.example.musictherapy.ui.screens.login.LoginScreen
+import com.example.musictherapy.ui.screens.registration.RegistrationScreen
 import com.example.musictherapy.ui.theme.MusicTherapyTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LoginScreen()
+                    RegistrationScreen()
                 }
             }
         }
