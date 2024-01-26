@@ -11,7 +11,9 @@ import com.example.musictherapy.navigation.AppNavigation
 import com.example.musictherapy.ui.screens.login.LoginScreen
 import com.example.musictherapy.ui.screens.registration.RegistrationScreen
 import com.example.musictherapy.ui.theme.MusicTherapyTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
