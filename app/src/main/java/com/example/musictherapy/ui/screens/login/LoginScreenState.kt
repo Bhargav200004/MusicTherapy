@@ -1,5 +1,6 @@
 package com.example.musictherapy.ui.screens.login
 
 data class LoginScreenState(
-    val test : String = ""
+    val email : String = "",
+    val password : String = ""
 )

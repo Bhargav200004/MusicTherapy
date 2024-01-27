@@ -137,7 +137,7 @@ fun RegistrationScreen() {
 }
 
 @Composable
-private fun CustomInputOutlinedTextField(
+fun CustomInputOutlinedTextField(
     value: String,
     onValueChange: (String) -> Unit,
     placeHolder: String,
@@ -181,7 +181,7 @@ private fun CustomInputOutlinedTextField(
 
 
 @Composable
-private fun CustomPasswordOutlinedTextField(
+fun CustomPasswordOutlinedTextField(
     value: String,
     onValueChange: (String) -> Unit,
     placeHolder: String
