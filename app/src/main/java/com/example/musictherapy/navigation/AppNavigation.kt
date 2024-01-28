@@ -1,6 +1,5 @@
 package com.example.musictherapy.navigation
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,18 +8,19 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navigation
 import com.example.musictherapy.ui.components.BottomNavigationScreenBar
 import com.example.musictherapy.ui.screens.favoriteScreen.FavoriteScreen
 import com.example.musictherapy.ui.screens.homeScreen.HomeScreen
 import com.example.musictherapy.ui.screens.locationScreen.LocationScreen
+import com.example.musictherapy.ui.screens.login.LoginScreen
 import com.example.musictherapy.ui.screens.musicScreen.MusicScreen
+import com.example.musictherapy.ui.screens.registration.RegistrationScreen
 
 @Composable
 fun AppNavigation() {
@@ -56,8 +56,8 @@ fun AppNavigation() {
     ){paddingValue->
         Box(
             modifier = Modifier
-            .padding(paddingValues = paddingValue)
-            .fillMaxSize()
+                .padding(paddingValues = paddingValue)
+                .fillMaxSize()
         ){
             NavigationController(navController = navController)
         }
@@ -67,19 +67,25 @@ fun AppNavigation() {
 
 @Composable
 fun NavigationController(navController : NavHostController) {
-    NavHost(navController = navController, startDestination = NavigationItem.Favorite.route){
-        composable(route = NavigationItem.Home.route){
-            HomeScreen()
-        }
-        composable(route = NavigationItem.Favorite.route){
-            FavoriteScreen()
-        }
-        composable(route = NavigationItem.Music.route){
-            MusicScreen()
-        }
-        composable(route = NavigationItem.Location.route){
-            LocationScreen()
-        }
+    NavHost(navController = navController, startDestination = NavigationItem.Home.route){
+
+
+
+        /*------------------------------------------------------------------------------------------------------------------------------*/
+
+            composable(route = NavigationItem.Home.route){
+                HomeScreen()
+            }
+            composable(route = NavigationItem.Favorite.route){
+                FavoriteScreen()
+            }
+            composable(route = NavigationItem.Music.route){
+                MusicScreen()
+            }
+            composable(route = NavigationItem.Location.route){
+                LocationScreen()
+            }
+
     }
 }
 

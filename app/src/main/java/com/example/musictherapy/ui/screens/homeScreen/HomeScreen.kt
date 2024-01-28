@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavDestinationDsl
 import com.example.musictherapy.ui.components.homeScreenComponent.HomeScreenSearchBar
 import com.example.musictherapy.ui.components.homeScreenComponent.RecommendedCard
 import com.example.musictherapy.ui.components.homeScreenComponent.TopHomeScreenBar

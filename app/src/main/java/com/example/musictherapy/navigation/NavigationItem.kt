@@ -15,3 +15,5 @@ sealed class NavigationItem(val route : String, val contentDescription:String, v
     data object Music : NavigationItem(route = "music" ,contentDescription = "music icon",icons = Icons.Outlined.MusicNote)
 
 }
+
+
