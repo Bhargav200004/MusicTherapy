@@ -74,7 +74,9 @@ fun BottomNavigationScreenBar(
                                         }
                                     }
                                 },
-                                icon = navigationItem.icons,
+                                icon =
+
+                                navigationItem.icons,
                                 isIconSelected = currentRoute != navigationItem.route,
                                 contentDescription = navigationItem.contentDescription
                             )
