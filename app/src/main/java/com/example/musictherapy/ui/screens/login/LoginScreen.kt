@@ -17,9 +17,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
@@ -30,13 +27,13 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import com.example.musictherapy.navigation.NavigationItem
+import com.example.musictherapy.navigation.graph.AuthScreen
+import com.example.musictherapy.navigation.graph.NavigationGraph
 import com.example.musictherapy.ui.screens.registration.CustomInputOutlinedTextField
 import com.example.musictherapy.ui.screens.registration.CustomPasswordOutlinedTextField
 
 @Composable
-fun LoginScreen(navController: NavHostController) {
-    var value by remember { mutableStateOf("") }
+fun LoginScreen(navHostController: NavHostController) {
 
     val viewModel: LoginScreenViewModel = hiltViewModel()
 
@@ -97,6 +94,11 @@ fun LoginScreen(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(5.dp))
                 Button(
                     onClick = {
+                              navHostController.navigate(route = NavigationGraph.MAIN_SCREEN_PAGE){
+                                  popUpTo(AuthScreen.LOGIN.route){
+                                      inclusive = true
+                                  }
+                              }
                     },
                     modifier = Modifier
                         .align(Alignment.End),
