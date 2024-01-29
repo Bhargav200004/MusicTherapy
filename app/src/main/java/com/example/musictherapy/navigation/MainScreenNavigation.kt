@@ -13,21 +13,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navigation
 import com.example.musictherapy.ui.components.BottomNavigationScreenBar
 import com.example.musictherapy.ui.screens.favoriteScreen.FavoriteScreen
 import com.example.musictherapy.ui.screens.homeScreen.HomeScreen
 import com.example.musictherapy.ui.screens.locationScreen.LocationScreen
-import com.example.musictherapy.ui.screens.login.LoginScreen
 import com.example.musictherapy.ui.screens.musicScreen.MusicScreen
-import com.example.musictherapy.ui.screens.registration.RegistrationScreen
 
 @Composable
-fun AppNavigation() {
+fun MainScreenNavigation(navController: NavHostController = rememberNavController()) {
 
-    
-    val navController = rememberNavController()
-    
     val item = listOf(
         NavigationItem.Home,
         NavigationItem.Music,
@@ -59,19 +53,16 @@ fun AppNavigation() {
                 .padding(paddingValues = paddingValue)
                 .fillMaxSize()
         ){
-            NavigationController(navController = navController)
+            MainScreenNavigationController(navController = navController)
         }
     }
 
 }
 
 @Composable
-fun NavigationController(navController : NavHostController) {
+fun MainScreenNavigationController(navController : NavHostController) {
     NavHost(navController = navController, startDestination = NavigationItem.Home.route){
 
-
-
-        /*------------------------------------------------------------------------------------------------------------------------------*/
 
             composable(route = NavigationItem.Home.route){
                 HomeScreen()
@@ -88,6 +79,8 @@ fun NavigationController(navController : NavHostController) {
 
     }
 }
+
+
 
 
 

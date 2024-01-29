@@ -40,11 +40,11 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import com.example.musictherapy.navigation.NavigationItem
+import com.example.musictherapy.navigation.graph.AuthScreen
 
 
 @Composable
-fun RegistrationScreen(navController: NavHostController) {
+fun RegistrationScreen(navHostController: NavHostController) {
 
 
     val viewModel: RegistrationScreenViewModel = hiltViewModel()
@@ -111,7 +111,11 @@ fun RegistrationScreen(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(30.dp))
                 ElevatedButton(
                     onClick = {
-                              navController.navigate(NavigationItem.Home.route)
+                              navHostController.navigate(route = AuthScreen.LOGIN.route){
+                                  popUpTo(route = AuthScreen.SIGNUP.route){
+                                      inclusive = true
+                                  }
+                              }
                     },
                     modifier = Modifier
                         .align(Alignment.End),
