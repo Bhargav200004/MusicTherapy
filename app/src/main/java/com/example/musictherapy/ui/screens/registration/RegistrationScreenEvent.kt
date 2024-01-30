@@ -10,5 +10,7 @@ sealed class RegistrationScreenEvent {
 
     data class OnConfirmPasswordClick(val confirmPassword: String) : RegistrationScreenEvent()
 
+    data object OnRegistrationButtonClick : RegistrationScreenEvent()
+
 
 }
