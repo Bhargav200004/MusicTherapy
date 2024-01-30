@@ -2,6 +2,9 @@ package com.example.musictherapy.ui.screens.registration
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.musictherapy.navigation.graph.AuthScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -64,6 +67,10 @@ class RegistrationScreenViewModel @Inject constructor(
                         )
                     }
                 }
+            }
+
+            RegistrationScreenEvent.OnRegistrationButtonClick -> {
+
             }
         }
     }

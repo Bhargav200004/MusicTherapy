@@ -14,7 +14,7 @@ fun NavGraphBuilder.authNavigation(navHostController: NavHostController){
         startDestination = AuthScreen.SIGNUP.route
     ){
         composable(route = AuthScreen.SIGNUP.route){
-            RegistrationScreen(navHostController)
+            RegistrationScreen()
         }
         composable(route = AuthScreen.LOGIN.route){
             LoginScreen(navHostController)
