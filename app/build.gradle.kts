@@ -98,4 +98,11 @@ dependencies {
     ksp("com.google.dagger:hilt-android-compiler:2.48.1")
     ksp("androidx.hilt:hilt-compiler:1.1.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth")
 }
