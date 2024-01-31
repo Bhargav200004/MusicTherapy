@@ -45,7 +45,7 @@ import com.example.musictherapy.navigation.graph.AuthScreen
 
 
 @Composable
-fun RegistrationScreen(navHostController: NavHostController = rememberNavController()) {
+fun RegistrationScreen(navHostController: NavHostController) {
 
 
     val viewModel: RegistrationScreenViewModel = hiltViewModel()
